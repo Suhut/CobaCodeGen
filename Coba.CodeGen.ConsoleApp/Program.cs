@@ -1,11 +1,11 @@
 ﻿using Coba.CodeGen.ConsoleApp.Model; 
 
 Console.WriteLine("---------------------------------------");
-Console.WriteLine("  Wired Brain Coffee - Person Manager  ");
+Console.WriteLine("  Wired Brain Coffee - Employee Manager  ");
 Console.WriteLine("---------------------------------------");
 Console.WriteLine();
 
-var person = new Person
+var person = new Employee
 {
     FirstName = "Thomas",
     LastName = "Huber"

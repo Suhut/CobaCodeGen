@@ -34,7 +34,10 @@ public sealed class ToStringGenerator : IIncrementalGenerator
             
             partial class {className} 
             {"{"}
-                    
+                public override string ToString() 
+                {"{"}
+                    return "from {className}";
+                {"}"}  
             {"}"} 
             """);
             context.AddSource(fileName, stringBuilder.ToString());
