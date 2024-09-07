@@ -3,6 +3,6 @@
 public partial class Employee
 {
     public string? FirstName { get; set; }
-
+    internal string? MidleName { get; set; } 
     public string? LastName { get; set; } 
 }

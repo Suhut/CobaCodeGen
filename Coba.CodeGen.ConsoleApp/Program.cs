@@ -1,18 +1,14 @@
-﻿using Coba.CodeGen.ConsoleApp.Model; 
+﻿using Coba.CodeGen.ConsoleApp.Model;  
 
-Console.WriteLine("---------------------------------------");
-Console.WriteLine("  Wired Brain Coffee - Employee Manager  ");
-Console.WriteLine("---------------------------------------");
-Console.WriteLine();
-
-var person = new Employee
+var employee = new Employee
 {
-    FirstName = "Thomas",
-    LastName = "Huber"
+    FirstName = "Suhut",
+    MidleName = "Wadiyo",
+    LastName = "Padang"
 };
 
-var personAsString = person.ToString();
+var employeeAsString = employee.ToString();
 
-Console.WriteLine(personAsString);
+Console.WriteLine(employeeAsString); 
 
 Console.ReadLine();
