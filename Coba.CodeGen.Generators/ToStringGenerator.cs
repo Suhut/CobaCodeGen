@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Text;
 
 namespace Coba.CodeGen.Generators;
 
@@ -17,10 +18,27 @@ public sealed class ToStringGenerator : IIncrementalGenerator
     }
 
     private static void Execute(SourceProductionContext context, ClassDeclarationSyntax classDeclarationSyntax)
-    {
-        var className = classDeclarationSyntax.Identifier.Text;
-        var fileName = $"{className}.g.cs";
+    { 
+        if (classDeclarationSyntax.Parent
+            is BaseNamespaceDeclarationSyntax namespaceDeclarationSyntax)
+        {
 
-        context.AddSource(fileName, "// Generated! file again lagi dan lagi");
+            var namespaceName = namespaceDeclarationSyntax.Name.ToString();
+            var className = classDeclarationSyntax.Identifier.Text;
+            var fileName = $"{namespaceName}.{className}.g.cs";
+
+            var stringBuilder = new StringBuilder();
+
+            stringBuilder.Append($"""
+            namespace {namespaceName};
+            
+            partial class {className} 
+            {"{"}
+                    
+            {"}"} 
+            """);
+            context.AddSource(fileName, stringBuilder.ToString());
+
+        }
     }
 }

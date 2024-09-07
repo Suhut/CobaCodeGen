@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Coba.CodeGen": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\Coba.CodeGen.ConsoleApp\\Coba.CodeGen.ConsoleApp.csproj"
+    }
+  }
+}
