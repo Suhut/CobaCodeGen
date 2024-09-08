@@ -1,5 +1,9 @@
-﻿namespace Coba.CodeGen.ConsoleApp.Model;
- 
+﻿
+using Coba.CodeGen.Generators;
+
+namespace Coba.CodeGen.ConsoleApp.Model;
+
+[GenerateToString]
 public partial class Employee
 {
     public string? FirstName { get; set; }
